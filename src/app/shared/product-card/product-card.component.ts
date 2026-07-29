@@ -53,12 +53,8 @@ export class ProductCardComponent {
 
   getWhatsAppUrl(): string {
     const phone = '917981081579';
-    const productUrl = `https://smincubators.com/products/${this.product.slug}`;
-    const imageUrl = this.product.images && this.product.images.length > 0 
-      ? `https://smincubators.com${this.product.images[0]}` 
-      : (this.product.image ? `https://smincubators.com${this.product.image}` : '');
-      
-    const text = `${this.product.whatsappMessage}\n\nImage: ${imageUrl}\n\nProduct Link: ${productUrl}`;
+    const productUrl = `https://sm-incubators.vercel.app/products/${this.product.slug}`;
+    const text = `${this.product.whatsappMessage}\n\nProduct Link: ${productUrl}`;
     const message = encodeURIComponent(text);
     return `https://wa.me/${phone}?text=${message}`;
   }

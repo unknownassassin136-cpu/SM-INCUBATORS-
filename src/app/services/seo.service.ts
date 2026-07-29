@@ -44,7 +44,7 @@ export class SeoService {
   }
 
   private setCanonicalUrl(route?: string) {
-    const url = `https://smincubators.com${route || '/'}`;
+    const url = `https://sm-incubators.vercel.app${route || '/'}`;
     let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
     if (!link) {
       link = this.document.createElement('link');
