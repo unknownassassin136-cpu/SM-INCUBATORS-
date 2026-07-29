@@ -1,0 +1,259 @@
+[
+  {
+    "id": "SMI-FRESH-50FA-260716",
+    "slug": "50-egg-fully-automatic-incubator",
+    "name": "50 Egg Fully Automatic Egg Incubator for Poultry Farming",
+    "category": "Fully Automatic",
+    "capacity": 50,
+    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "description": "Premium 50 Egg Fully Automatic Egg Incubator for Poultry Farming. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "image": "/assets/images/products/prod1/main.jpg",
+    "images": [
+      "/assets/images/products/prod1/main.jpeg"
+    ],
+    "features": [
+      "Fully automatic egg turning",
+      "Digital temperature control",
+      "Efficient incubation"
+    ],
+    "specifications": {
+      "Model": "SMI50FA2026A",
+      "SKU": "SMI-FRESH-50FA-260716",
+      "Brand": "SM Incubators",
+      "HSN": "84362100",
+      "Warranty": "No Warranty"
+    },
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
+    "delivery": "Ships within 2-3 business days",
+    "availability": "In Stock",
+    "relatedProducts": [
+      "60-egg-fully-automatic-incubator",
+      "100-egg-semi-automatic-incubator"
+    ],
+    "whatsappMessage": "Hello, I'm interested in the 50 Egg Fully Automatic Egg Incubator (SMI50FA2026A). Please provide details."
+  },
+  {
+    "id": "SMI-FRESH-60FA-260716",
+    "slug": "60-egg-fully-automatic-incubator",
+    "name": "60 Egg Fully Automatic Egg Incubator for Poultry Farming",
+    "category": "Fully Automatic",
+    "capacity": 60,
+    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "description": "Premium 60 Egg Fully Automatic Egg Incubator for Poultry Farming. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "image": "/assets/images/products/prod2/main.jpg",
+    "images": [
+      "/assets/images/products/prod2/main.jpg"
+    ],
+    "features": [
+      "Fully automatic egg turning",
+      "Digital temperature control",
+      "Efficient incubation"
+    ],
+    "specifications": {
+      "Model": "SMI60FA2026A",
+      "SKU": "SMI-FRESH-60FA-260716",
+      "Brand": "SM Incubators",
+      "HSN": "84362100",
+      "Warranty": "No Warranty"
+    },
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
+    "delivery": "Ships within 2-3 business days",
+    "availability": "In Stock",
+    "relatedProducts": [
+      "50-egg-fully-automatic-incubator",
+      "60-egg-fully-automatic-wooden-incubator"
+    ],
+    "whatsappMessage": "Hello, I'm interested in the 60 Egg Fully Automatic Egg Incubator (SMI60FA2026A). Please provide details."
+  },
+  {
+    "id": "SMI-FRESH-60FAW-260716",
+    "slug": "60-egg-fully-automatic-wooden-incubator",
+    "name": "60 Egg Fully Automatic Wooden Egg Incubator",
+    "category": "Fully Automatic",
+    "capacity": 60,
+    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "description": "Premium 60 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "image": "/assets/images/products/prod3/main.jpg",
+    "images": [
+      "/assets/images/products/prod3/main.jpg"
+    ],
+    "features": [
+      "Fully automatic egg turning",
+      "Digital temperature control",
+      "Efficient incubation",
+      "Wooden body for superior insulation"
+    ],
+    "specifications": {
+      "Model": "SMI60FAW2026A",
+      "SKU": "SMI-FRESH-60FAW-260716",
+      "Brand": "SM Incubators",
+      "HSN": "84362100",
+      "Warranty": "No Warranty",
+      "Material": "Wood"
+    },
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
+    "delivery": "Ships within 2-3 business days",
+    "availability": "In Stock",
+    "relatedProducts": [
+      "60-egg-fully-automatic-incubator",
+      "100-egg-fully-automatic-wooden-incubator"
+    ],
+    "whatsappMessage": "Hello, I'm interested in the 60 Egg Fully Automatic Wooden Egg Incubator (SMI60FAW2026A). Please provide details."
+  },
+  {
+    "id": "SMI-FRESH-100SA-260716",
+    "slug": "100-egg-semi-automatic-incubator",
+    "name": "100 Egg Semi Automatic Egg Incubator",
+    "category": "Semi Automatic",
+    "capacity": 100,
+    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "description": "Premium 100 Egg Semi Automatic Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "image": "/assets/images/products/prod4/main.jpg",
+    "images": [
+      "/assets/images/products/prod4/main.jpg"
+    ],
+    "features": [
+      "Semi automatic egg turning",
+      "Digital temperature control",
+      "Efficient incubation"
+    ],
+    "specifications": {
+      "Model": "SMI100SA2026A",
+      "SKU": "SMI-FRESH-100SA-260716",
+      "Brand": "SM Incubators",
+      "HSN": "84362100",
+      "Warranty": "No Warranty"
+    },
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
+    "delivery": "Ships within 2-3 business days",
+    "availability": "In Stock",
+    "relatedProducts": [
+      "100-egg-fully-automatic-wooden-incubator",
+      "300-egg-fully-automatic-wooden-incubator"
+    ],
+    "whatsappMessage": "Hello, I'm interested in the 100 Egg Semi Automatic Egg Incubator (SMI100SA2026A). Please provide details."
+  },
+  {
+    "id": "SMI-FRESH-100FAW-260716",
+    "slug": "100-egg-fully-automatic-wooden-incubator",
+    "name": "100 Egg Fully Automatic Wooden Egg Incubator",
+    "category": "Fully Automatic",
+    "capacity": 100,
+    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "description": "Premium 100 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "image": "/assets/images/products/prod5/main.jpg",
+    "images": [
+      "/assets/images/products/prod5/main.jpg"
+    ],
+    "features": [
+      "Fully automatic egg turning",
+      "Digital temperature control",
+      "Efficient incubation",
+      "Wooden body for superior insulation"
+    ],
+    "specifications": {
+      "Model": "SMI100FAW2026A",
+      "SKU": "SMI-FRESH-100FAW-260716",
+      "Brand": "SM Incubators",
+      "HSN": "84362100",
+      "Warranty": "No Warranty",
+      "Material": "Wood"
+    },
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
+    "delivery": "Ships within 2-3 business days",
+    "availability": "In Stock",
+    "relatedProducts": [
+      "100-egg-semi-automatic-incubator",
+      "300-egg-fully-automatic-wooden-incubator"
+    ],
+    "whatsappMessage": "Hello, I'm interested in the 100 Egg Fully Automatic Wooden Egg Incubator (SMI100FAW2026A). Please provide details."
+  },
+  {
+    "id": "SMI-FRESH-300FAW-260716",
+    "slug": "300-egg-fully-automatic-wooden-incubator",
+    "name": "300 Egg Fully Automatic Wooden Egg Incubator",
+    "category": "Fully Automatic",
+    "capacity": 300,
+    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "description": "Premium 300 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "image": "/assets/images/products/prod6/main.jpg",
+    "images": [
+      "/assets/images/products/prod6/main.jpg"
+    ],
+    "features": [
+      "Fully automatic egg turning",
+      "Digital temperature control",
+      "Efficient incubation",
+      "Wooden body for superior insulation"
+    ],
+    "specifications": {
+      "Model": "SMI300FAW2026A",
+      "SKU": "SMI-FRESH-300FAW-260716",
+      "Brand": "SM Incubators",
+      "HSN": "84362100",
+      "Warranty": "No Warranty",
+      "Material": "Wood"
+    },
+    "applications": [
+      "Commercial Farming",
+      "Poultry Farming"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
+    "delivery": "Ships within 5-7 business days",
+    "availability": "In Stock",
+    "relatedProducts": [
+      "100-egg-fully-automatic-wooden-incubator",
+      "100-egg-semi-automatic-incubator"
+    ],
+    "whatsappMessage": "Hello, I'm interested in the 300 Egg Fully Automatic Wooden Egg Incubator (SMI300FAW2026A). Please provide details."
+  }
+]

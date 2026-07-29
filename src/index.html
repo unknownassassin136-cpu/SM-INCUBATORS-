@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SmIncubators</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="mat-typography font-sans text-gray-900 bg-gray-50">
+  <div id="global-error-banner" style="display: none; background: #fee2e2; border: 1px solid #ef4444; color: #b91c1c; padding: 20px; margin: 20px; border-radius: 8px; font-family: sans-serif; z-index: 99999; position: relative;">
+    <h3 style="margin-top: 0;">Fatal Application Error</h3>
+    <pre id="global-error-text" style="white-space: pre-wrap; word-break: break-all;"></pre>
+  </div>
+  <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+      document.getElementById('global-error-banner').style.display = 'block';
+      document.getElementById('global-error-text').innerText = message + '\n\n' + (error && error.stack ? error.stack : '');
+    };
+    window.addEventListener("unhandledrejection", function(event) {
+      document.getElementById('global-error-banner').style.display = 'block';
+      document.getElementById('global-error-text').innerText = "Unhandled Promise Rejection: " + (event.reason && event.reason.stack ? event.reason.stack : event.reason);
+    });
+  </script>
+  <app-root></app-root>
+</body>
+</html>
