@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { SeoService } from '../../services/seo.service';
@@ -42,6 +42,7 @@ import { Spare } from '../../models/product.model';
 export class SparesComponent implements OnInit {
   private dataService = inject(DataService);
   private seoService = inject(SeoService);
+  private cdr = inject(ChangeDetectorRef);
   
   spares: Spare[] = [];
 
@@ -54,6 +55,7 @@ export class SparesComponent implements OnInit {
 
     this.dataService.getSpares().subscribe(spares => {
       this.spares = spares;
+      this.cdr.detectChanges();
     });
   }
 }

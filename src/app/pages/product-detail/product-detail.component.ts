@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
@@ -199,6 +199,7 @@ export class ProductDetailComponent implements OnInit {
   private seoService = inject(SeoService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
   
   product: Product | undefined;
   relatedProducts: Product[] = [];
@@ -218,6 +219,7 @@ export class ProductDetailComponent implements OnInit {
   loadProduct(slug: string) {
     this.isLoading = true;
     this.errorMessage = '';
+    this.cdr.detectChanges();
     
     this.dataService.getProductBySlug(slug).subscribe({
       next: (product) => {
@@ -260,14 +262,17 @@ export class ProductDetailComponent implements OnInit {
           if (product.relatedProducts && product.relatedProducts.length > 0) {
             this.loadRelatedProducts(product.relatedProducts);
           }
+          this.cdr.detectChanges();
         } else {
           this.router.navigate(['/404']);
+          this.cdr.detectChanges();
         }
       },
       error: (err) => {
         this.isLoading = false;
         this.errorMessage = err.message || JSON.stringify(err);
         console.error('Error fetching product:', err);
+        this.cdr.detectChanges();
       }
     });
   }
