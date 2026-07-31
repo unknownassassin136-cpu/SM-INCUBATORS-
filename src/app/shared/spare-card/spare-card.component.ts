@@ -40,7 +40,7 @@ export class SpareCardComponent {
 
   getWhatsAppUrl(): string {
     const phone = '917981081579';
-    const sparesUrl = `https://sm-incubators.vercel.app/spares`;
+    const sparesUrl = `https://smincubators.in/spares`;
     const text = `${this.spare.whatsappMessage}\n\nLink: ${sparesUrl}`;
     const message = encodeURIComponent(text);
     return `https://wa.me/${phone}?text=${message}`;

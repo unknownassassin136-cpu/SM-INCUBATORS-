@@ -246,7 +246,7 @@ export class ProductDetailComponent implements OnInit {
               "@context": "https://schema.org/",
               "@type": "Product",
               "name": product.name,
-              "image": product.images ? product.images.map(img => `https://sm-incubators.vercel.app/${img}`) : [],
+              "image": product.images ? product.images.map(img => `https://smincubators.in/${img}`) : [],
               "description": product.description,
               "sku": product.id,
               "brand": {
@@ -291,7 +291,7 @@ export class ProductDetailComponent implements OnInit {
   getWhatsAppUrl(): string {
     if (!this.product) return '';
     const phone = '917981081579';
-    const productUrl = `https://sm-incubators.vercel.app/products/${this.product.slug}`;
+    const productUrl = `https://smincubators.in/products/${this.product.slug}`;
     const text = `${this.product.whatsappMessage}\n\nProduct Link: ${productUrl}`;
     const message = encodeURIComponent(text);
     return `https://wa.me/${phone}?text=${message}`;

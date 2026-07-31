@@ -212,8 +212,8 @@ export class HomeComponent implements OnInit {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "SM Incubators",
-      "url": "https://sm-incubators.vercel.app",
-      "logo": "https://sm-incubators.vercel.app/assets/logo.png",
+      "url": "https://smincubators.in",
+      "logo": "https://smincubators.in/assets/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-7981081579",

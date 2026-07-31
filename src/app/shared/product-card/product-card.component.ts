@@ -53,7 +53,7 @@ export class ProductCardComponent {
 
   getWhatsAppUrl(): string {
     const phone = '917981081579';
-    const productUrl = `https://sm-incubators.vercel.app/products/${this.product.slug}`;
+    const productUrl = `https://smincubators.in/products/${this.product.slug}`;
     const text = `${this.product.whatsappMessage}\n\nProduct Link: ${productUrl}`;
     const message = encodeURIComponent(text);
     return `https://wa.me/${phone}?text=${message}`;
