@@ -4,8 +4,15 @@
     "slug": "egg-turning-motor",
     "name": "Egg Turning Motor",
     "description": "High-torque synchronous motor for automatic egg turning trays. Ensures smooth and consistent 45-degree turning.",
-    "compatibleModels": ["30 Egg Fully Automatic Incubator", "60 Egg Fully Automatic Incubator", "100 Egg Fully Automatic Incubator"],
-    "images": ["assets/spares/turning-motor.jpg"],
+    "price": 450,
+    "compatibleModels": [
+      "30 Egg Fully Automatic Incubator",
+      "60 Egg Fully Automatic Incubator",
+      "100 Egg Fully Automatic Incubator"
+    ],
+    "images": [
+      "assets/spares/turning-motor.jpg"
+    ],
     "whatsappMessage": "Hello, I'm interested in the Egg Turning Motor spare part. Please provide Latest Price and Availability."
   },
   {
@@ -13,8 +20,14 @@
     "slug": "heating-element",
     "name": "PTC Heating Element",
     "description": "Durable PTC ceramic heating element for rapid and stable temperature maintenance.",
-    "compatibleModels": ["100 Egg Fully Automatic Incubator", "200 Egg Fully Automatic Incubator"],
-    "images": ["assets/spares/heating-element.jpg"],
+    "price": 600,
+    "compatibleModels": [
+      "100 Egg Fully Automatic Incubator",
+      "200 Egg Fully Automatic Incubator"
+    ],
+    "images": [
+      "assets/spares/heating-element.jpg"
+    ],
     "whatsappMessage": "Hello, I'm interested in the PTC Heating Element spare part. Please provide Latest Price and Availability."
   },
   {
@@ -22,8 +35,15 @@
     "slug": "temperature-controller",
     "name": "Digital Temperature & Humidity Controller",
     "description": "Advanced microcomputer controller for precise monitoring and adjustment of incubation parameters.",
-    "compatibleModels": ["200 Egg Fully Automatic Incubator", "300 Egg Fully Automatic Incubator", "500 Egg Fully Automatic Incubator"],
-    "images": ["assets/spares/temperature-controller.jpg"],
+    "price": 1200,
+    "compatibleModels": [
+      "200 Egg Fully Automatic Incubator",
+      "300 Egg Fully Automatic Incubator",
+      "500 Egg Fully Automatic Incubator"
+    ],
+    "images": [
+      "assets/spares/temperature-controller.jpg"
+    ],
     "whatsappMessage": "Hello, I'm interested in the Digital Temperature & Humidity Controller spare part. Please provide Latest Price and Availability."
   },
   {
@@ -31,8 +51,13 @@
     "slug": "humidity-sensor",
     "name": "High Precision Humidity Sensor",
     "description": "Accurate humidity probe to ensure optimal moisture levels during the critical hatching phase.",
-    "compatibleModels": ["All Models"],
-    "images": ["assets/spares/humidity-sensor.jpg"],
+    "price": 350,
+    "compatibleModels": [
+      "All Models"
+    ],
+    "images": [
+      "assets/spares/humidity-sensor.jpg"
+    ],
     "whatsappMessage": "Hello, I'm interested in the High Precision Humidity Sensor spare part. Please provide Latest Price and Availability."
   },
   {
@@ -40,8 +65,14 @@
     "slug": "cooling-fan",
     "name": "Circulation Cooling Fan",
     "description": "Brushless DC fan for even temperature distribution and fresh air circulation inside the incubator.",
-    "compatibleModels": ["60 Egg Fully Automatic Incubator", "100 Egg Fully Automatic Incubator"],
-    "images": ["assets/spares/cooling-fan.jpg"],
+    "price": 300,
+    "compatibleModels": [
+      "60 Egg Fully Automatic Incubator",
+      "100 Egg Fully Automatic Incubator"
+    ],
+    "images": [
+      "assets/spares/cooling-fan.jpg"
+    ],
     "whatsappMessage": "Hello, I'm interested in the Circulation Cooling Fan spare part. Please provide Latest Price and Availability."
   },
   {
@@ -49,8 +80,15 @@
     "slug": "universal-egg-tray",
     "name": "Universal Egg Tray with Rollers",
     "description": "Adjustable roller tray suitable for various egg sizes, from quail to goose.",
-    "compatibleModels": ["60 Egg Fully Automatic Incubator", "100 Egg Fully Automatic Incubator", "200 Egg Fully Automatic Incubator"],
-    "images": ["assets/spares/egg-tray.jpg"],
+    "price": 850,
+    "compatibleModels": [
+      "60 Egg Fully Automatic Incubator",
+      "100 Egg Fully Automatic Incubator",
+      "200 Egg Fully Automatic Incubator"
+    ],
+    "images": [
+      "assets/spares/egg-tray.jpg"
+    ],
     "whatsappMessage": "Hello, I'm interested in the Universal Egg Tray with Rollers spare part. Please provide Latest Price and Availability."
   }
 ]

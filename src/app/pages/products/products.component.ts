@@ -63,6 +63,7 @@ export class ProductsComponent implements OnInit {
     this.seoService.setSeoData({
       title: 'Our Products - Egg Incubators',
       description: 'Browse our complete catalog of premium egg incubators. Explore fully automatic, commercial, and mini incubators for all types of poultry.',
+      keywords: 'egg incubators, fully automatic incubator, buy egg incubator online, wooden incubator, poultry farming tools',
       route: '/products'
     });
     

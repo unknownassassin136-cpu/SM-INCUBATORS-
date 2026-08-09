@@ -49,7 +49,8 @@ export class SparesComponent implements OnInit {
   ngOnInit() {
     this.seoService.setSeoData({
       title: 'Spare Parts & Accessories',
-      description: 'Find genuine spare parts and accessories for SM Incubators. We stock heating elements, turning motors, humidity sensors, and more.',
+      description: 'Find high-quality spare parts and accessories for your egg incubators. Heating elements, turning motors, controllers, and more.',
+      keywords: 'incubator spare parts, incubator accessories, turning motor, heating element, temperature controller, egg tray',
       route: '/spares'
     });
 

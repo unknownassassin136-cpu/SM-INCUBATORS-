@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Spare } from '../../models/product.model';
+import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-spare-card',
@@ -17,6 +18,15 @@ import { Spare } from '../../models/product.model';
       
       <div class="p-6 flex flex-col flex-grow">
         <h3 class="text-lg font-bold text-gray-900 mb-2">{{spare.name}}</h3>
+        
+        <!-- Price -->
+        <div class="mb-3" *ngIf="spare.price > 0">
+          <span class="text-xl font-extrabold text-primary">₹{{spare.price | number}}</span>
+        </div>
+        <div class="mb-3" *ngIf="!spare.price || spare.price === 0">
+          <span class="text-sm font-bold text-gray-500">Price on request</span>
+        </div>
+        
         <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{spare.description}}</p>
         
         <div class="mt-auto mb-6">
@@ -28,21 +38,29 @@ import { Spare } from '../../models/product.model';
           </div>
         </div>
         
-        <a [href]="getWhatsAppUrl()" target="_blank" class="w-full inline-flex justify-center items-center py-2.5 px-4 bg-primary text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors shadow-sm gap-2">
-          Get Quote
-        </a>
+        <button (click)="openCheckout($event)" class="w-full inline-flex justify-center items-center py-2.5 px-4 bg-primary text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors shadow-sm gap-2">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+          </svg>
+          {{ spare.price > 0 ? '₹' + (spare.price | number) + ' — Buy Now' : 'Buy Now' }}
+        </button>
       </div>
     </div>
   `
 })
 export class SpareCardComponent {
   @Input({ required: true }) spare!: Spare;
+  private checkoutService = inject(CheckoutService);
 
-  getWhatsAppUrl(): string {
-    const phone = '917981081579';
-    const sparesUrl = `https://smincubators.in/spares`;
-    const text = `${this.spare.whatsappMessage}\n\nLink: ${sparesUrl}`;
-    const message = encodeURIComponent(text);
-    return `https://wa.me/${phone}?text=${message}`;
+  openCheckout(event: Event): void {
+    event.stopPropagation();
+    event.preventDefault();
+    this.checkoutService.open({
+      name: this.spare.name,
+      price: this.spare.price,
+      modelId: this.spare.id,
+      slug: this.spare.slug,
+      type: 'spare'
+    });
   }
 }

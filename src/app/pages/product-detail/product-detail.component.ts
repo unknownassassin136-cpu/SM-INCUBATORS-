@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { SeoService } from '../../services/seo.service';
+import { CheckoutService } from '../../services/checkout.service';
 import { ProductCardComponent } from '../../shared/product-card/product-card.component';
 import { Product } from '../../models/product.model';
 
@@ -75,6 +76,16 @@ import { Product } from '../../models/product.model';
             <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight mb-4">
               {{product.name}}
             </h1>
+
+            <!-- Price Display -->
+            <div class="mb-4" *ngIf="product.price > 0">
+              <span class="text-3xl font-extrabold text-primary">₹{{product.price | number}}</span>
+              <span *ngIf="product.originalPrice" class="text-lg text-gray-400 line-through ml-3">₹{{product.originalPrice | number}}</span>
+              <p class="text-sm text-gray-500 mt-1">Inclusive of all taxes</p>
+            </div>
+            <div class="mb-4" *ngIf="!product.price || product.price === 0">
+              <span class="text-xl font-bold text-gray-500">Price on request</span>
+            </div>
             
             <p class="text-xl text-gray-600 leading-relaxed mb-8">
               {{product.shortDescription}}
@@ -105,17 +116,16 @@ import { Product } from '../../models/product.model';
             
             <!-- Call to action -->
             <div class="mt-auto">
-              <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-6">
-                <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                  <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                  Request a Quote
-                </h4>
-                <p class="text-sm text-gray-600">Contact us on WhatsApp to get the latest price, shipping charges, and availability for your location.</p>
-              </div>
+              <button (click)="openCheckout($event)" class="flex items-center justify-center w-full py-4 px-6 bg-primary text-white text-xl font-bold rounded-xl hover:bg-blue-900 transition-colors shadow-soft gap-3 mb-4">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                </svg>
+                {{ product.price > 0 ? '₹' + (product.price | number) + ' — Buy Now' : 'Buy Now' }}
+              </button>
               
-              <a [href]="getWhatsAppUrl()" target="_blank" class="flex items-center justify-center w-full py-4 px-6 bg-accent text-white text-xl font-bold rounded-xl hover:bg-green-600 transition-colors shadow-soft gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
-                Get Quote on WhatsApp
+              <a [href]="getWhatsAppUrl()" target="_blank" class="flex items-center justify-center w-full py-3 px-6 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-colors gap-2 text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                Have questions? Chat on WhatsApp
               </a>
             </div>
           </div>
@@ -197,6 +207,7 @@ import { Product } from '../../models/product.model';
 export class ProductDetailComponent implements OnInit {
   private dataService = inject(DataService);
   private seoService = inject(SeoService);
+  private checkoutService = inject(CheckoutService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
@@ -238,11 +249,12 @@ export class ProductDetailComponent implements OnInit {
             this.seoService.setSeoData({
               title: product.name,
               description: product.shortDescription,
+              keywords: `${product.name}, ${product.category} incubator, egg incubator, poultry farming, buy incubator online, sm incubators`,
               route: `/products/${product.slug}`
             });
             
             // Structured Data
-            this.seoService.setStructuredData({
+            const structuredData: any = {
               "@context": "https://schema.org/",
               "@type": "Product",
               "name": product.name,
@@ -253,7 +265,17 @@ export class ProductDetailComponent implements OnInit {
                 "@type": "Brand",
                 "name": "SM Incubators"
               }
-            });
+            };
+            if (product.price > 0) {
+              structuredData["offers"] = {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "price": product.price.toString(),
+                "availability": "https://schema.org/InStock",
+                "seller": { "@type": "Organization", "name": "SM Incubators" }
+              };
+            }
+            this.seoService.setStructuredData(structuredData);
           } catch (e: any) {
              console.error("SEO Error:", e);
           }
@@ -286,6 +308,22 @@ export class ProductDetailComponent implements OnInit {
   getSpecKeys(): string[] {
     if (!this.product?.specifications) return [];
     return Object.keys(this.product.specifications);
+  }
+
+  openCheckout(event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    if (!this.product) return;
+    this.checkoutService.open({
+      name: this.product.name,
+      price: this.product.price,
+      modelId: this.product.specifications?.['Model'] || this.product.id,
+      slug: this.product.slug,
+      type: 'product',
+      imageUrl: this.product.images?.[0] || this.product.image
+    });
   }
 
   getWhatsAppUrl(): string {

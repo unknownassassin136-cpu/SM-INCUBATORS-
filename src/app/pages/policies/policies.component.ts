@@ -86,8 +86,9 @@ export class PoliciesComponent implements OnInit {
         this.content = policy.content;
         
         this.seoService.setSeoData({
-          title: this.title,
-          description: `Read the ${this.title} for SM Incubators.`,
+          title: `${this.title} | Policies`,
+          description: this.content.substring(0, 150) + '...',
+          keywords: 'sm incubators policies, terms and conditions, privacy policy, refund policy, shipping policy',
           route: `/${path}`
         });
       }

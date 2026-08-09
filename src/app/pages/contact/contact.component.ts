@@ -133,7 +133,8 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     this.seoService.setSeoData({
       title: 'Contact Us',
-      description: 'Get in touch with SM Incubators for sales, support, and inquiries. Find our phone number, WhatsApp, and address details.',
+      description: 'Get in touch with SM Incubators for product inquiries, bulk orders, or technical support. We are here to help your poultry business grow.',
+      keywords: 'contact sm incubators, incubator support, buy incubator, poultry equipment supplier, contact details',
       route: '/contact'
     });
   }

@@ -4,6 +4,8 @@ export interface Product {
   name: string;
   category: string;
   capacity: number;
+  price: number;
+  originalPrice?: number;
   shortDescription: string;
   description: string;
   images: string[];
@@ -24,7 +26,9 @@ export interface Spare {
   slug: string;
   name: string;
   description: string;
+  price: number;
   compatibleModels: string[];
   images: string[];
   whatsappMessage: string;
 }
+

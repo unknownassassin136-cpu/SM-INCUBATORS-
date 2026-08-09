@@ -87,7 +87,8 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.seoService.setSeoData({
       title: 'About Us',
-      description: 'Learn about SM Incubators, our mission, vision, and our commitment to manufacturing the best egg incubators in the industry.',
+      description: 'Learn about SM Incubators, our journey, and our commitment to providing top-quality, high-hatch-rate egg incubators for farmers across India.',
+      keywords: 'about sm incubators, incubator manufacturer, poultry farming experts, egg incubator company',
       route: '/about'
     });
   }

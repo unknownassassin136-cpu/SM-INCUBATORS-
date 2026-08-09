@@ -30,8 +30,8 @@ import { Product } from '../../models/product.model';
               <a routerLink="/products" class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-900 transition-colors shadow-soft">
                 Explore Products
               </a>
-              <a href="https://wa.me/917981081579?text=Hello,%20I%20would%20like%20to%20get%20a%20quote." target="_blank" class="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-gray-300 hover:bg-gray-50 transition-colors">
-                Get Quote
+              <a routerLink="/products" class="bg-white text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-gray-300 hover:bg-gray-50 transition-colors">
+                Shop Now
               </a>
             </div>
           </div>
@@ -202,9 +202,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.setSeoData({
-      title: 'Precision Egg Incubators for High Hatch Rates',
-      description: 'SM Incubators manufactures premium, fully automatic egg incubators for hobbyists and commercial hatcheries. Get the best hatch rates with our advanced technology.',
-      keywords: 'egg incubator, fully automatic incubator, poultry incubator, chicken incubator, commercial incubator',
+      title: 'Premium Egg Incubators & Poultry Equipment',
+      description: 'Discover premium fully automatic egg incubators and poultry equipment by SM Incubators. High hatch rates, digital controls, and durable designs.',
+      keywords: 'egg incubators, automatic incubator, poultry equipment, sm incubators, chicken incubator, hatch eggs, wooden incubator',
       route: '/'
     });
     
