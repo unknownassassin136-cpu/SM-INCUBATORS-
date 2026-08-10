@@ -5,7 +5,7 @@
     "name": "50 Egg Fully Automatic Egg Incubator for Poultry Farming",
     "category": "Fully Automatic",
     "capacity": 50,
-    "price": 4900,
+    "price": 5000,
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 50 Egg Fully Automatic Egg Incubator for Poultry Farming. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod1/main.jpg",
@@ -179,7 +179,7 @@
     "name": "100 Egg Fully Automatic Wooden Egg Incubator",
     "category": "Fully Automatic",
     "capacity": 100,
-    "price": 14500,
+    "price": 16000,
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 100 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod5/main.jpg",
@@ -224,7 +224,7 @@
     "name": "300 Egg Fully Automatic Wooden Egg Incubator",
     "category": "Fully Automatic",
     "capacity": 300,
-    "price": 32500,
+    "price": 33000,
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 300 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod6/main.jpg",
@@ -272,7 +272,9 @@
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 50 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod3/main.jpg",
-    "images": ["/assets/images/products/prod3/main.jpg"],
+    "images": [
+      "/assets/images/products/prod3/main.jpg"
+    ],
     "features": [
       "Fully automatic egg turning",
       "Digital temperature control",
@@ -287,11 +289,21 @@
       "Warranty": "No Warranty",
       "Material": "Wood"
     },
-    "applications": ["Poultry Farming", "Hobby Breeding", "Small Farms"],
-    "birds": ["Chicken", "Duck", "Quail"],
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
     "delivery": "Ships within 2-3 business days",
     "availability": "In Stock",
-    "relatedProducts": ["60-egg-fully-automatic-wooden-incubator"],
+    "relatedProducts": [
+      "60-egg-fully-automatic-wooden-incubator"
+    ],
     "whatsappMessage": "Hello, I'm interested in the 50 Egg Fully Automatic Wooden Egg Incubator (SMI50FAW2026A). Please provide details."
   },
   {
@@ -304,7 +316,9 @@
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 150 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod5/main.jpg",
-    "images": ["/assets/images/products/prod5/main.jpg"],
+    "images": [
+      "/assets/images/products/prod5/main.jpg"
+    ],
     "features": [
       "Fully automatic egg turning",
       "Digital temperature control",
@@ -319,11 +333,22 @@
       "Warranty": "No Warranty",
       "Material": "Wood"
     },
-    "applications": ["Poultry Farming", "Hobby Breeding", "Small Farms"],
-    "birds": ["Chicken", "Duck", "Quail"],
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
     "delivery": "Ships within 2-3 business days",
     "availability": "In Stock",
-    "relatedProducts": ["100-egg-fully-automatic-wooden-incubator", "200-egg-fully-automatic-wooden-incubator"],
+    "relatedProducts": [
+      "100-egg-fully-automatic-wooden-incubator",
+      "200-egg-fully-automatic-wooden-incubator"
+    ],
     "whatsappMessage": "Hello, I'm interested in the 150 Egg Fully Automatic Wooden Egg Incubator (SMI150FAW2026A). Please provide details."
   },
   {
@@ -336,7 +361,9 @@
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 200 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod5/main.jpg",
-    "images": ["/assets/images/products/prod5/main.jpg"],
+    "images": [
+      "/assets/images/products/prod5/main.jpg"
+    ],
     "features": [
       "Fully automatic egg turning",
       "Digital temperature control",
@@ -351,11 +378,22 @@
       "Warranty": "No Warranty",
       "Material": "Wood"
     },
-    "applications": ["Poultry Farming", "Hobby Breeding", "Small Farms"],
-    "birds": ["Chicken", "Duck", "Quail"],
+    "applications": [
+      "Poultry Farming",
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
     "delivery": "Ships within 3-5 business days",
     "availability": "In Stock",
-    "relatedProducts": ["150-egg-fully-automatic-wooden-incubator", "300-egg-fully-automatic-wooden-incubator"],
+    "relatedProducts": [
+      "150-egg-fully-automatic-wooden-incubator",
+      "300-egg-fully-automatic-wooden-incubator"
+    ],
     "whatsappMessage": "Hello, I'm interested in the 200 Egg Fully Automatic Wooden Egg Incubator (SMI200FAW2026A). Please provide details."
   },
   {
@@ -368,7 +406,9 @@
     "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "description": "Premium 500 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
     "image": "/assets/images/products/prod6/main.jpg",
-    "images": ["/assets/images/products/prod6/main.jpg"],
+    "images": [
+      "/assets/images/products/prod6/main.jpg"
+    ],
     "features": [
       "Fully automatic egg turning",
       "Digital temperature control",
@@ -383,11 +423,20 @@
       "Warranty": "No Warranty",
       "Material": "Wood"
     },
-    "applications": ["Commercial Farming", "Poultry Farming"],
-    "birds": ["Chicken", "Duck", "Quail"],
+    "applications": [
+      "Commercial Farming",
+      "Poultry Farming"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
     "delivery": "Ships within 5-7 business days",
     "availability": "In Stock",
-    "relatedProducts": ["300-egg-fully-automatic-wooden-incubator"],
+    "relatedProducts": [
+      "300-egg-fully-automatic-wooden-incubator"
+    ],
     "whatsappMessage": "Hello, I'm interested in the 500 Egg Fully Automatic Wooden Egg Incubator (SMI500FAW2026A). Please provide details."
   },
   {
@@ -400,7 +449,9 @@
     "shortDescription": "Affordable 40 egg semi-automatic incubator, perfect for beginners and small-scale hatching.",
     "description": "The 40 Egg Semi Automatic Egg Incubator provides an affordable and reliable hatching solution for beginners. Features manual egg turning and digital temperature monitoring.",
     "image": "/assets/images/products/prod1/main.jpg",
-    "images": ["/assets/images/products/prod1/main.jpg"],
+    "images": [
+      "/assets/images/products/prod1/main.jpg"
+    ],
     "features": [
       "Semi automatic egg turning",
       "Digital temperature control",
@@ -414,11 +465,20 @@
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
-    "applications": ["Hobby Breeding", "Beginners"],
-    "birds": ["Chicken", "Duck", "Quail"],
+    "applications": [
+      "Hobby Breeding",
+      "Beginners"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
     "delivery": "Ships within 2-3 business days",
     "availability": "In Stock",
-    "relatedProducts": ["80-egg-semi-automatic-incubator"],
+    "relatedProducts": [
+      "80-egg-semi-automatic-incubator"
+    ],
     "whatsappMessage": "Hello, I'm interested in the 40 Egg Semi Automatic Incubator (SMI40SA2026A). Please provide details."
   },
   {
@@ -431,7 +491,9 @@
     "shortDescription": "Affordable 80 egg semi-automatic incubator for medium-scale hobbyists.",
     "description": "The 80 Egg Semi Automatic Egg Incubator is perfect for hobbyists looking for a cost-effective solution with larger capacity. Manual egg turning with digital temperature monitoring.",
     "image": "/assets/images/products/prod2/main.jpg",
-    "images": ["/assets/images/products/prod2/main.jpg"],
+    "images": [
+      "/assets/images/products/prod2/main.jpg"
+    ],
     "features": [
       "Semi automatic egg turning",
       "Digital temperature control",
@@ -445,11 +507,20 @@
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
-    "applications": ["Hobby Breeding", "Small Farms"],
-    "birds": ["Chicken", "Duck", "Quail"],
+    "applications": [
+      "Hobby Breeding",
+      "Small Farms"
+    ],
+    "birds": [
+      "Chicken",
+      "Duck",
+      "Quail"
+    ],
     "delivery": "Ships within 2-3 business days",
     "availability": "In Stock",
-    "relatedProducts": ["40-egg-semi-automatic-incubator"],
+    "relatedProducts": [
+      "40-egg-semi-automatic-incubator"
+    ],
     "whatsappMessage": "Hello, I'm interested in the 80 Egg Semi Automatic Incubator (SMI80SA2026A). Please provide details."
   }
 ]
