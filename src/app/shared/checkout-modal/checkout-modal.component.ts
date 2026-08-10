@@ -39,11 +39,7 @@ import { INDIAN_STATES, StateShipping } from '../../data/states.data';
             </div>
             <span class="step-label">Payment</span>
           </div>
-          <div class="step-line" [class.active]="currentStep > 2"></div>
-          <div class="checkout-step" [class.active]="currentStep >= 3">
-            <div class="step-circle">3</div>
-            <span class="step-label">Confirm</span>
-          </div>
+          <!-- Step 3 removed -->
         </div>
 
         <!-- Product Summary Bar -->
@@ -147,10 +143,10 @@ import { INDIAN_STATES, StateShipping } from '../../data/states.data';
             <p class="text-sm text-gray-500 mb-6">Scan the QR code or pay to the UPI ID below.</p>
 
             <!-- Amount Display -->
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4 mb-6" *ngIf="item && item.price > 0">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4 mb-6" *ngIf="item && item!.price > 0">
               <div class="flex justify-between text-sm text-gray-600 mb-1">
                 <span>Product Price</span>
-                <span class="font-semibold text-gray-800">₹{{item.price | number}}</span>
+                <span class="font-semibold text-gray-800">₹{{item?.price | number}}</span>
               </div>
               <div class="flex justify-between text-sm text-gray-600 mb-2 pb-2 border-b border-blue-200">
                 <span>Shipping <span class="text-xs text-gray-500">({{selectedState?.name}})</span></span>
@@ -161,7 +157,7 @@ import { INDIAN_STATES, StateShipping } from '../../data/states.data';
                 <p class="text-3xl font-extrabold text-primary">₹{{totalAmount | number}}</p>
               </div>
             </div>
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4 mb-6 text-center" *ngIf="!item || item.price === 0">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4 mb-6 text-center" *ngIf="!item || item?.price === 0">
               <p class="text-sm text-gray-600 mb-1">Amount</p>
               <p class="text-lg font-bold text-gray-700">As discussed / Price on request</p>
             </div>
@@ -192,15 +188,15 @@ import { INDIAN_STATES, StateShipping } from '../../data/states.data';
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 Back
               </button>
-              <button (click)="currentStep = 3" class="checkout-btn-primary flex-[2]">
-                I've Paid
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              <button (click)="confirmAndSendWhatsApp()" class="checkout-btn-accent flex-[2]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                I've Paid (Send WhatsApp)
               </button>
             </div>
           </div>
 
-          <!-- ========== STEP 3: Transaction Confirmation ========== -->
-          <div *ngIf="currentStep === 3" class="step-panel">
+          <!-- ========== STEP 3: Transaction Confirmation (DISABLED) ========== -->
+          <div *ngIf="false" class="step-panel">
             <h2 class="text-xl font-bold text-gray-900 mb-1">Confirm Payment</h2>
             <p class="text-sm text-gray-500 mb-6">Enter your transaction reference so we can verify your payment.</p>
 
@@ -241,15 +237,15 @@ import { INDIAN_STATES, StateShipping } from '../../data/states.data';
                 <span class="text-gray-500">Product</span>
                 <span class="font-semibold text-gray-900 text-right max-w-[60%] truncate">{{item?.name}}</span>
               </div>
-              <div class="flex justify-between text-sm" *ngIf="item && item.price > 0">
+              <div class="flex justify-between text-sm" *ngIf="item && item!.price > 0">
                 <span class="text-gray-500">Base Amount</span>
-                <span class="font-semibold text-gray-700">₹{{item.price | number}}</span>
+                <span class="font-semibold text-gray-700">₹{{item?.price | number}}</span>
               </div>
-              <div class="flex justify-between text-sm" *ngIf="item && item.price > 0">
+              <div class="flex justify-between text-sm" *ngIf="item && item!.price > 0">
                 <span class="text-gray-500">Shipping</span>
                 <span class="font-semibold text-gray-700">{{ shippingCharge > 0 ? '₹' + (shippingCharge | number) : 'Free' }}</span>
               </div>
-              <div class="flex justify-between text-sm border-t border-gray-200 pt-2" *ngIf="item && item.price > 0">
+              <div class="flex justify-between text-sm border-t border-gray-200 pt-2" *ngIf="item && item!.price > 0">
                 <span class="text-gray-700 font-bold">Total Amount</span>
                 <span class="font-bold text-primary">₹{{totalAmount | number}}</span>
               </div>
@@ -670,11 +666,6 @@ export class CheckoutModalComponent implements OnInit, OnDestroy {
   }
 
   confirmAndSendWhatsApp(): void {
-    this.step3Submitted = true;
-    if (!this.referenceType || !this.referenceNumber.trim()) {
-      return;
-    }
-
     const phone = '917981081579';
     let productDetailsText = '';
     if (this.item) {
@@ -690,13 +681,11 @@ export class CheckoutModalComponent implements OnInit, OnDestroy {
 
     const customerInfo = `*Customer:* ${this.customerName}\n*Phone:* ${this.customerPhone}${this.customerEmail ? '\n*Email:* ' + this.customerEmail : ''}\n*Address:* ${this.customerAddress}\n*State:* ${this.selectedState?.name}\n*Pincode:* ${this.customerPincode}`;
 
-    const paymentInfo = `*Payment Ref Type:* ${this.referenceType}\n*${this.referenceType} Number:* ${this.referenceNumber}`;
-
     const productLink = this.item
       ? `\n\n*Product Link:* https://smincubators.in/${this.item.type === 'product' ? 'products/' + this.item.slug : 'spares'}`
       : '';
 
-    const text = `🛒 *New Order from SM Incubators Website*\n\n${productDetailsText}\n\n${customerInfo}\n\n${paymentInfo}${productLink}`;
+    const text = `🛒 *New Order from SM Incubators Website*\n\n${productDetailsText}\n\n${customerInfo}${productLink}`;
 
     const encodedText = encodeURIComponent(text);
     const waUrl = `https://wa.me/${phone}?text=${encodedText}`;

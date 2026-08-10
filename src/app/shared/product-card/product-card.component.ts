@@ -47,9 +47,16 @@ import { CheckoutService } from '../../services/checkout.service';
         </p>
         
         <div class="space-y-3 mt-auto">
-          <a [routerLink]="['/products', product.slug]" class="block w-full py-2.5 px-4 bg-gray-50 text-primary font-semibold text-center rounded-lg hover:bg-gray-100 transition-colors">
-            View Details
-          </a>
+          <div class="flex gap-2">
+            <a [routerLink]="['/products', product.slug]" class="flex-grow flex items-center justify-center py-2.5 px-4 bg-gray-50 text-primary font-semibold text-center rounded-lg hover:bg-gray-100 transition-colors">
+              View Details
+            </a>
+            <button (click)="shareProduct($event)" class="flex-shrink-0 w-11 h-11 bg-gray-50 text-primary flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors" title="Share this product">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+            </button>
+          </div>
           <button (click)="openCheckout($event)" class="flex items-center justify-center w-full py-2.5 px-4 bg-primary text-white font-semibold text-center rounded-lg hover:bg-blue-900 transition-colors shadow-sm gap-2 relative z-10 pointer-events-auto">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
@@ -77,6 +84,25 @@ export class ProductCardComponent {
       type: 'product',
       imageUrl: this.product.images?.[0] || this.product.image
     });
+  }
+
+  async shareProduct(event: Event): Promise<void> {
+    event.stopPropagation();
+    event.preventDefault();
+    const url = `https://smincubators.in/products/${this.product.slug}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: this.product.name,
+          text: this.product.shortDescription || this.product.name,
+          url: url
+        });
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(url).then(() => alert('Link copied to clipboard!'));
+    }
   }
 
   onImageError(event: Event): void {
