@@ -64,10 +64,8 @@ import { SeoService } from '../../services/seo.service';
             </div>
             
             <div class="mt-12">
-              <!-- Google Maps Placeholder -->
-              <div class="w-full h-64 bg-gray-100 rounded-2xl border border-gray-200 flex items-center justify-center shadow-inner overflow-hidden relative">
-                <span class="text-gray-500 font-medium z-10 bg-white/80 px-4 py-2 rounded-lg backdrop-blur">Google Maps Placeholder</span>
-                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;"></div>
+              <div class="w-full h-64 md:h-80 bg-gray-100 rounded-2xl border border-gray-200 shadow-inner overflow-hidden relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3824.477909185154!2d81.49747847514628!3d16.552434884199307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDMzJzA4LjgiTiA4McKwMzAnMDAuMiJF!5e0!3m2!1sen!2sin!4v1788267945069!5m2!1sen!2sin" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
               </div>
             </div>
           </div>
