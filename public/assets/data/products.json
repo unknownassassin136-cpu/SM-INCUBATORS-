@@ -2,12 +2,12 @@
   {
     "id": "SMI-FRESH-50FA-260716",
     "slug": "50-egg-fully-automatic-incubator",
-    "name": "50 Egg Fully Automatic Egg Incubator for Poultry Farming",
-    "category": "Fully Automatic",
+    "name": "50 Egg Thermocol Fully Automatic Egg Incubator",
+    "category": "Thermocol Fully Automatic",
     "capacity": 50,
-    "price": 5000,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 50 Egg Fully Automatic Egg Incubator for Poultry Farming. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 5500,
+    "shortDescription": "50-egg thermocol fully automatic incubator with digital temperature control.",
+    "description": "50 Egg Thermocol Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod1/main.jpg",
     "images": [
       "/assets/images/products/prod1/main.jpg",
@@ -23,7 +23,7 @@
     "specifications": {
       "Model": "SMI50FA2026A",
       "SKU": "SMI-FRESH-50FA-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
@@ -43,17 +43,22 @@
       "60-egg-fully-automatic-incubator",
       "100-egg-semi-automatic-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 50 Egg Fully Automatic Egg Incubator (SMI50FA2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 50 Egg Thermocol Fully Automatic Egg Incubator priced at ₹5,500. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Thermocol",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-60FA-260716",
     "slug": "60-egg-fully-automatic-incubator",
-    "name": "60 Egg Fully Automatic Egg Incubator for Poultry Farming",
-    "category": "Fully Automatic",
+    "name": "60 Egg Thermocol Fully Automatic Egg Incubator",
+    "category": "Thermocol Fully Automatic",
     "capacity": 60,
-    "price": 5500,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 60 Egg Fully Automatic Egg Incubator for Poultry Farming. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 6000,
+    "shortDescription": "60-egg thermocol fully automatic incubator with digital temperature control.",
+    "description": "60 Egg Thermocol Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod2/main.jpg",
     "images": [
       "/assets/images/products/prod2/main.jpg",
@@ -69,7 +74,7 @@
     "specifications": {
       "Model": "SMI60FA2026A",
       "SKU": "SMI-FRESH-60FA-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
@@ -89,7 +94,12 @@
       "50-egg-fully-automatic-incubator",
       "60-egg-fully-automatic-wooden-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 60 Egg Fully Automatic Egg Incubator (SMI60FA2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 60 Egg Thermocol Fully Automatic Egg Incubator priced at ₹6,000. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Thermocol",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-60FAW-260716",
@@ -115,7 +125,7 @@
     "specifications": {
       "Model": "SMI60FAW2026A",
       "SKU": "SMI-FRESH-60FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -161,7 +171,7 @@
     "specifications": {
       "Model": "SMI100SA2026A",
       "SKU": "SMI-FRESH-100SA-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
@@ -186,12 +196,12 @@
   {
     "id": "SMI-FRESH-100FAW-260716",
     "slug": "100-egg-fully-automatic-wooden-incubator",
-    "name": "100 Egg Fully Automatic Wooden Egg Incubator",
-    "category": "Fully Automatic",
+    "name": "100 Egg Wooden Fully Automatic Egg Incubator",
+    "category": "Wooden Fully Automatic",
     "capacity": 100,
-    "price": 16000,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 100 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 18000,
+    "shortDescription": "100-egg wooden fully automatic incubator for poultry hatching.",
+    "description": "100 Egg Wooden Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod5/main.jpg",
     "images": [
       "/assets/images/products/prod5/main.jpg",
@@ -207,7 +217,7 @@
     "specifications": {
       "Model": "SMI100FAW2026A",
       "SKU": "SMI-FRESH-100FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -228,17 +238,22 @@
       "100-egg-semi-automatic-incubator",
       "300-egg-fully-automatic-wooden-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 100 Egg Fully Automatic Wooden Egg Incubator (SMI100FAW2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 100 Egg Wooden Fully Automatic Egg Incubator priced at ₹18,000. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Wood",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-300FAW-260716",
     "slug": "300-egg-fully-automatic-wooden-incubator",
-    "name": "300 Egg Fully Automatic Wooden Egg Incubator",
-    "category": "Fully Automatic",
+    "name": "300 Egg Wooden Fully Automatic Egg Incubator",
+    "category": "Wooden Fully Automatic",
     "capacity": 300,
-    "price": 33000,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 300 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 38500,
+    "shortDescription": "300-egg wooden fully automatic incubator for larger hatching requirements.",
+    "description": "300 Egg Wooden Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod6/main.jpg",
     "images": [
       "/assets/images/products/prod6/main.jpg",
@@ -254,7 +269,7 @@
     "specifications": {
       "Model": "SMI300FAW2026A",
       "SKU": "SMI-FRESH-300FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -274,17 +289,22 @@
       "100-egg-fully-automatic-wooden-incubator",
       "100-egg-semi-automatic-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 300 Egg Fully Automatic Wooden Egg Incubator (SMI300FAW2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 300 Egg Wooden Fully Automatic Egg Incubator priced at ₹38,500. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Wood",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-50FAW-260716",
     "slug": "50-egg-fully-automatic-wooden-incubator",
-    "name": "50 Egg Fully Automatic Wooden Egg Incubator",
-    "category": "Fully Automatic",
+    "name": "50 Egg Wooden Fully Automatic Egg Incubator",
+    "category": "Wooden Fully Automatic",
     "capacity": 50,
-    "price": 12000,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 50 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 14000,
+    "shortDescription": "50-egg wooden fully automatic incubator for poultry hatching.",
+    "description": "50 Egg Wooden Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod3/main.jpg",
     "images": [
       "/assets/images/products/prod3/main.jpg",
@@ -300,7 +320,7 @@
     "specifications": {
       "Model": "SMI50FAW2026A",
       "SKU": "SMI-FRESH-50FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -320,7 +340,12 @@
     "relatedProducts": [
       "60-egg-fully-automatic-wooden-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 50 Egg Fully Automatic Wooden Egg Incubator (SMI50FAW2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 50 Egg Wooden Fully Automatic Egg Incubator priced at ₹14,000. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Wood",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-150FAW-260716",
@@ -346,7 +371,7 @@
     "specifications": {
       "Model": "SMI150FAW2026A",
       "SKU": "SMI-FRESH-150FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -372,12 +397,12 @@
   {
     "id": "SMI-FRESH-200FAW-260716",
     "slug": "200-egg-fully-automatic-wooden-incubator",
-    "name": "200 Egg Fully Automatic Wooden Egg Incubator",
-    "category": "Fully Automatic",
+    "name": "200 Egg Wooden Fully Automatic Egg Incubator",
+    "category": "Wooden Fully Automatic",
     "capacity": 200,
-    "price": 22500,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 200 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 28000,
+    "shortDescription": "200-egg wooden fully automatic incubator for poultry hatching.",
+    "description": "200 Egg Wooden Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod5/main.jpg",
     "images": [
       "/assets/images/products/prod5/main.jpg",
@@ -393,7 +418,7 @@
     "specifications": {
       "Model": "SMI200FAW2026A",
       "SKU": "SMI-FRESH-200FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -414,17 +439,22 @@
       "150-egg-fully-automatic-wooden-incubator",
       "300-egg-fully-automatic-wooden-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 200 Egg Fully Automatic Wooden Egg Incubator (SMI200FAW2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 200 Egg Wooden Fully Automatic Egg Incubator priced at ₹28,000. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Wood",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-500FAW-260716",
     "slug": "500-egg-fully-automatic-wooden-incubator",
-    "name": "500 Egg Fully Automatic Wooden Egg Incubator",
-    "category": "Fully Automatic",
+    "name": "500 Egg Wooden Fully Automatic Egg Incubator",
+    "category": "Wooden Fully Automatic",
     "capacity": 500,
-    "price": 43500,
-    "shortDescription": "Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
-    "description": "Premium 500 Egg Fully Automatic Wooden Egg Incubator. Suitable for chicken, duck and quail eggs with digital temperature control and efficient incubation.",
+    "price": 48500,
+    "shortDescription": "500-egg wooden fully automatic incubator for commercial poultry farming.",
+    "description": "500 Egg Wooden Fully Automatic Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod6/main.jpg",
     "images": [
       "/assets/images/products/prod6/main.jpg",
@@ -440,7 +470,7 @@
     "specifications": {
       "Model": "SMI500FAW2026A",
       "SKU": "SMI-FRESH-500FAW-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty",
       "Material": "Wood"
@@ -459,17 +489,22 @@
     "relatedProducts": [
       "300-egg-fully-automatic-wooden-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 500 Egg Fully Automatic Wooden Egg Incubator (SMI500FAW2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 500 Egg Wooden Fully Automatic Egg Incubator priced at ₹48,500. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Fully Automatic",
+    "bodyMaterial": "Wood",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-40SA-260716",
     "slug": "40-egg-semi-automatic-incubator",
-    "name": "40 Egg Semi Automatic Egg Incubator",
-    "category": "Semi Automatic",
+    "name": "40 Egg Manual Egg Incubator",
+    "category": "Manual",
     "capacity": 40,
     "price": 1600,
-    "shortDescription": "Affordable 40 egg semi-automatic incubator, perfect for beginners and small-scale hatching.",
-    "description": "The 40 Egg Semi Automatic Egg Incubator provides an affordable and reliable hatching solution for beginners. Features manual egg turning and digital temperature monitoring.",
+    "shortDescription": "Affordable 40-egg manual incubator for small-scale hatching.",
+    "description": "40 Egg Manual Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod1/main.jpg",
     "images": [
       "/assets/images/products/prod1/main.jpg",
@@ -485,7 +520,7 @@
     "specifications": {
       "Model": "SMI40SA2026A",
       "SKU": "SMI-FRESH-40SA-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
@@ -503,17 +538,22 @@
     "relatedProducts": [
       "80-egg-semi-automatic-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 40 Egg Semi Automatic Incubator (SMI40SA2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 40 Egg Manual Egg Incubator priced at ₹1,600. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Manual",
+    "bodyMaterial": "To be confirmed",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   },
   {
     "id": "SMI-FRESH-80SA-260716",
     "slug": "80-egg-semi-automatic-incubator",
-    "name": "80 Egg Semi Automatic Egg Incubator",
-    "category": "Semi Automatic",
+    "name": "80 Egg Manual Egg Incubator",
+    "category": "Manual",
     "capacity": 80,
     "price": 2400,
-    "shortDescription": "Affordable 80 egg semi-automatic incubator for medium-scale hobbyists.",
-    "description": "The 80 Egg Semi Automatic Egg Incubator is perfect for hobbyists looking for a cost-effective solution with larger capacity. Manual egg turning with digital temperature monitoring.",
+    "shortDescription": "80-egg manual incubator for small farms and hobby breeders.",
+    "description": "80 Egg Manual Incubator from SRI MAVULLAMMA INCUBATORS. Contact us for product details and a demo video.",
     "image": "/assets/images/products/prod2/main.jpg",
     "images": [
       "/assets/images/products/prod2/main.jpg",
@@ -529,7 +569,7 @@
     "specifications": {
       "Model": "SMI80SA2026A",
       "SKU": "SMI-FRESH-80SA-260716",
-      "Brand": "SM Incubators",
+      "Brand": "SRI MAVULLAMMA INCUBATORS",
       "HSN": "84362100",
       "Warranty": "No Warranty"
     },
@@ -547,6 +587,11 @@
     "relatedProducts": [
       "40-egg-semi-automatic-incubator"
     ],
-    "whatsappMessage": "Hello, I'm interested in the 80 Egg Semi Automatic Incubator (SMI80SA2026A). Please provide details."
+    "whatsappMessage": "Hello, I am interested in the 80 Egg Manual Egg Incubator priced at ₹2,400. Please share availability, packaging and transport charges, delivery details, and a product demo video.",
+    "automationType": "Manual",
+    "bodyMaterial": "To be confirmed",
+    "currency": "INR",
+    "packagingCharges": "Extra",
+    "transportCharges": "Extra"
   }
 ]
