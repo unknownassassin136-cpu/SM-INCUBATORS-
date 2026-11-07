@@ -7,9 +7,16 @@
 /bazel-out
 
 # Node
-/node_modules
+node_modules/
+**/node_modules/
 npm-debug.log
 yarn-error.log
+
+# Backend compiled and env
+backend/dist/
+backend/.env
+*.env
+!.env.example
 
 # IDEs and editors
 .idea/

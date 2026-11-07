@@ -1,0 +1,117 @@
+<div class="space-y-6 max-w-4xl mx-auto">
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Global Site Settings</h1>
+      <p class="text-sm text-slate-500 mt-1">Configure business contact details, phone numbers, and payment QR code</p>
+    </div>
+
+    <button
+      (click)="saveSettings()"
+      [disabled]="saving"
+      class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow transition-colors"
+    >
+      <span *ngIf="saving" class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></span>
+      <span>{{ saving ? 'Saving Settings...' : 'Save Settings' }}</span>
+    </button>
+  </div>
+
+  <!-- Notification Toast -->
+  <div
+    *ngIf="notification"
+    class="p-4 rounded-xl text-sm font-semibold flex items-center justify-between shadow-sm transition-all"
+    [ngClass]="{
+      'bg-emerald-50 text-emerald-800 border border-emerald-200': notificationType === 'success',
+      'bg-red-50 text-red-800 border border-red-200': notificationType === 'error'
+    }"
+  >
+    <span>{{ notification }}</span>
+    <button (click)="notification = ''" class="text-slate-400 hover:text-slate-600">&times;</button>
+  </div>
+
+  <!-- Settings Form -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 space-y-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Brand Name</label>
+        <input
+          type="text"
+          [(ngModel)]="settings.brandName"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tagline</label>
+        <input
+          type="text"
+          [(ngModel)]="settings.tagline"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Support Phone Number</label>
+        <input
+          type="text"
+          [(ngModel)]="settings.phone"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-mono"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">WhatsApp Number (with Country Code)</label>
+        <input
+          type="text"
+          [(ngModel)]="settings.whatsappNumber"
+          placeholder="917981081579"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-mono"
+        />
+      </div>
+    </div>
+
+    <!-- UPI Details -->
+    <div class="border-t border-slate-100 pt-6 space-y-4">
+      <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider">Payment & UPI Configuration</h3>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">UPI ID</label>
+        <input
+          type="text"
+          [(ngModel)]="settings.upiId"
+          placeholder="7981081579@ptyes"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 font-mono"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">UPI QR Code Image</label>
+        <div class="flex items-center gap-4">
+          <div class="w-24 h-24 rounded-xl bg-slate-100 border border-slate-200 overflow-hidden flex items-center justify-center p-1">
+            <img *ngIf="settings.upiQrImage" [src]="settings.upiQrImage" alt="UPI QR" class="w-full h-full object-contain" />
+          </div>
+
+          <div class="space-y-2">
+            <label class="cursor-pointer inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition-colors">
+              <svg class="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+              <span>{{ uploadingQr ? 'Uploading QR...' : 'Upload New QR Code Image' }}</span>
+              <input type="file" accept="image/*" (change)="onQrSelected($event)" class="hidden" [disabled]="uploadingQr" />
+            </label>
+            <p class="text-xs text-slate-400">Directly uploads to Firebase Storage</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="border-t border-slate-100 pt-6">
+      <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Physical Workshop / Store Address</label>
+      <textarea
+        rows="2"
+        [(ngModel)]="settings.address"
+        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 resize-none"
+      ></textarea>
+    </div>
+  </div>
+</div>
+

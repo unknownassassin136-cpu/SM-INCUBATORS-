@@ -11,6 +11,7 @@ export const routes: Routes = [
   { path: 'terms', loadComponent: () => import('./pages/policies/policies.component').then(m => m.PoliciesComponent) },
   { path: 'shipping-policy', loadComponent: () => import('./pages/policies/policies.component').then(m => m.PoliciesComponent) },
   { path: 'return-policy', loadComponent: () => import('./pages/policies/policies.component').then(m => m.PoliciesComponent) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.routes').then(m => m.ADMIN_ROUTES) },
   { path: '404', loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent) },
   { path: '**', redirectTo: '/404' }
 ];

@@ -1,0 +1,5 @@
+/* Custom component styles for Admin Login */
+:host {
+  display: block;
+}
+

@@ -1,0 +1,126 @@
+<div class="space-y-8 max-w-7xl mx-auto">
+  <!-- Top Greeting & Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Overview Dashboard</h1>
+      <p class="text-sm text-slate-500 mt-1">Manage incubators, upload assets, and monitor customer orders</p>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        routerLink="/admin/products"
+        class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl shadow transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+        Add New Product
+      </a>
+      <a
+        routerLink="/admin/hero"
+        class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-colors shadow-sm"
+      >
+        Edit Hero Page
+      </a>
+    </div>
+  </div>
+
+  <!-- Metric Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Products Card -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-center justify-between">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Incubators</p>
+        <p class="text-3xl font-extrabold text-slate-900 mt-2">{{ productCount }}</p>
+        <a routerLink="/admin/products" class="inline-flex items-center text-xs font-semibold text-blue-600 hover:text-blue-800 mt-3">
+          Manage products &rarr;
+        </a>
+      </div>
+      <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
+        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+      </div>
+    </div>
+
+    <!-- Spares Card -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-center justify-between">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Spare Parts Catalog</p>
+        <p class="text-3xl font-extrabold text-slate-900 mt-2">{{ sparesCount }}</p>
+        <a routerLink="/admin/spares" class="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800 mt-3">
+          Manage spares &rarr;
+        </a>
+      </div>
+      <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg>
+      </div>
+    </div>
+
+    <!-- Orders Card -->
+    <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex items-center justify-between">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Customer Orders / Inquiries</p>
+        <p class="text-3xl font-extrabold text-slate-900 mt-2">{{ ordersCount }}</p>
+        <a routerLink="/admin/orders" class="inline-flex items-center text-xs font-semibold text-purple-600 hover:text-purple-800 mt-3">
+          View inquiries &rarr;
+        </a>
+      </div>
+      <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
+        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Orders Table -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+    <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+      <div>
+        <h2 class="text-base font-bold text-slate-900">Recent Customer Inquiries</h2>
+        <p class="text-xs text-slate-500 mt-0.5">Website checkout submissions saved in real-time</p>
+      </div>
+      <a routerLink="/admin/orders" class="text-xs font-bold text-blue-600 hover:text-blue-800">
+        View All &rarr;
+      </a>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-slate-50 text-slate-400 uppercase text-[11px] font-bold tracking-wider">
+          <tr>
+            <th class="py-3.5 px-6">Customer</th>
+            <th class="py-3.5 px-6">Item</th>
+            <th class="py-3.5 px-6">State / Location</th>
+            <th class="py-3.5 px-6">Amount</th>
+            <th class="py-3.5 px-6">Status</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-slate-700">
+          <tr *ngFor="let order of recentOrders" class="hover:bg-slate-50/50">
+            <td class="py-4 px-6">
+              <p class="font-bold text-slate-900">{{ order.customerName }}</p>
+              <p class="text-xs text-slate-400">{{ order.customerPhone }}</p>
+            </td>
+            <td class="py-4 px-6 font-medium text-slate-800">{{ order.itemName }}</td>
+            <td class="py-4 px-6">{{ order.state }} ({{ order.pincode }})</td>
+            <td class="py-4 px-6 font-bold text-slate-900">₹{{ order.totalAmount | number }}</td>
+            <td class="py-4 px-6">
+              <span
+                class="px-2.5 py-1 rounded-full text-xs font-bold inline-block"
+                [ngClass]="{
+                  'bg-amber-100 text-amber-700': order.status === 'Pending',
+                  'bg-emerald-100 text-emerald-700': order.status === 'Confirmed' || order.status === 'Paid',
+                  'bg-blue-100 text-blue-700': order.status === 'Shipped'
+                }"
+              >
+                {{ order.status }}
+              </span>
+            </td>
+          </tr>
+          <tr *ngIf="recentOrders.length === 0">
+            <td colspan="5" class="py-8 text-center text-slate-400 text-sm">
+              No orders or inquiries recorded yet. Orders placed through the website modal will appear here.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { CheckoutModalComponent } from './shared/checkout-modal/checkout-modal.component';
@@ -7,22 +9,26 @@ import { CheckoutModalComponent } from './shared/checkout-modal/checkout-modal.c
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, CheckoutModalComponent],
-  template: `
-    <div class="flex flex-col min-h-screen">
-      <app-navbar></app-navbar>
-      
-      <main class="flex-grow">
-        <router-outlet></router-outlet>
-      </main>
-      
-      <app-footer></app-footer>
-    </div>
-
-    <!-- Global Checkout Modal -->
-    <app-checkout-modal></app-checkout-modal>
-  `
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, CheckoutModalComponent],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
 })
 export class App {
   title = 'sm-incubators';
+  private router = inject(Router);
+
+  isAdminRoute = signal(this.checkIfAdmin());
+
+  constructor() {
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.isAdminRoute.set(this.checkIfAdmin(event.urlAfterRedirects || event.url));
+      });
+  }
+
+  private checkIfAdmin(url?: string): boolean {
+    const targetUrl = url || (typeof window !== 'undefined' ? window.location.pathname : '');
+    return targetUrl.includes('/admin');
+  }
 }

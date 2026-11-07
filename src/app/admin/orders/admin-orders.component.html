@@ -1,0 +1,158 @@
+<div class="space-y-6 max-w-7xl mx-auto">
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Orders & Inquiries</h1>
+      <p class="text-sm text-slate-500 mt-1">Review website customer inquiries, payment confirmations, and contact buyers</p>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div
+    *ngIf="notification"
+    class="p-4 rounded-xl text-sm font-semibold flex items-center justify-between shadow-sm transition-all"
+    [ngClass]="{
+      'bg-emerald-50 text-emerald-800 border border-emerald-200': notificationType === 'success',
+      'bg-red-50 text-red-800 border border-red-200': notificationType === 'error'
+    }"
+  >
+    <span>{{ notification }}</span>
+    <button (click)="notification = ''" class="text-slate-400 hover:text-slate-600">&times;</button>
+  </div>
+
+  <!-- Filter & Search Bar -->
+  <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+    <div class="relative w-full md:w-96">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (input)="applyFilter()"
+        placeholder="Search customer, phone, product..."
+        class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:bg-white"
+      />
+      <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </div>
+
+    <div class="flex items-center gap-2 w-full md:w-auto">
+      <span class="text-xs font-bold uppercase text-slate-400">Status:</span>
+      <select
+        [(ngModel)]="selectedStatus"
+        (change)="applyFilter()"
+        class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+      >
+        <option *ngFor="let s of statusOptions" [value]="s">{{ s }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Orders Table -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-slate-50 text-slate-400 uppercase text-[11px] font-bold tracking-wider">
+          <tr>
+            <th class="py-3.5 px-6">Customer & Phone</th>
+            <th class="py-3.5 px-6">Product Ordered</th>
+            <th class="py-3.5 px-6">Shipping Address</th>
+            <th class="py-3.5 px-6">Total Amount</th>
+            <th class="py-3.5 px-6">Source (UTM)</th>
+            <th class="py-3.5 px-6">Status</th>
+            <th class="py-3.5 px-6 text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-slate-700">
+          <tr *ngFor="let order of filteredOrders" class="hover:bg-slate-50/50">
+            <!-- Customer -->
+            <td class="py-4 px-6">
+              <p class="font-bold text-slate-900">{{ order.customerName }}</p>
+              <p class="text-xs text-blue-600 font-mono">{{ order.customerPhone }}</p>
+              <p *ngIf="order.customerEmail" class="text-[11px] text-slate-400">{{ order.customerEmail }}</p>
+            </td>
+
+            <!-- Product -->
+            <td class="py-4 px-6">
+              <p class="font-semibold text-slate-800">{{ order.itemName }}</p>
+              <p class="text-xs text-slate-400 font-mono">{{ order.itemModel }}</p>
+            </td>
+
+            <!-- Address -->
+            <td class="py-4 px-6 max-w-xs text-xs">
+              <p class="text-slate-700 line-clamp-2">{{ order.customerAddress }}</p>
+              <p class="text-slate-400 font-semibold mt-0.5">{{ order.state }} - {{ order.pincode }}</p>
+            </td>
+
+            <!-- Total Amount -->
+            <td class="py-4 px-6">
+              <p class="font-extrabold text-slate-900">₹{{ order.totalAmount | number }}</p>
+              <p class="text-[11px] text-slate-400">Shipping: ₹{{ order.shippingCharge || 0 }}</p>
+            </td>
+
+            <!-- Source (UTM Attribution) -->
+            <td class="py-4 px-6">
+              <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold capitalize"
+                [ngClass]="{
+                  'bg-blue-100 text-blue-800': order.utmSource === 'facebook' || order.utmSource === 'instagram',
+                  'bg-emerald-100 text-emerald-800': order.utmSource === 'whatsapp',
+                  'bg-red-100 text-red-800': order.utmSource === 'youtube',
+                  'bg-amber-100 text-amber-800': order.utmSource === 'google',
+                  'bg-purple-100 text-purple-800': order.utmSource === 'product_share' || order.utmSource === 'share',
+                  'bg-slate-100 text-slate-700': !order.utmSource || order.utmSource === 'direct'
+                }"
+              >
+                {{ order.utmSource || 'Direct' }}
+              </span>
+              <p *ngIf="order.utmCampaign" class="text-[10px] text-slate-400 font-mono mt-0.5 truncate max-w-[120px]">
+                {{ order.utmCampaign }}
+              </p>
+            </td>
+
+            <!-- Status Selector -->
+            <td class="py-4 px-6">
+              <select
+                [ngModel]="order.status"
+                (ngModelChange)="updateStatus(order, $event)"
+                class="px-2.5 py-1 rounded-lg text-xs font-bold border transition-colors cursor-pointer"
+                [ngClass]="{
+                  'bg-amber-50 text-amber-800 border-amber-200': order.status === 'Pending',
+                  'bg-blue-50 text-blue-800 border-blue-200': order.status === 'Contacted',
+                  'bg-emerald-50 text-emerald-800 border-emerald-200': order.status === 'Paid',
+                  'bg-purple-50 text-purple-800 border-purple-200': order.status === 'Shipped',
+                  'bg-slate-50 text-slate-700 border-slate-200': order.status === 'Delivered',
+                  'bg-red-50 text-red-800 border-red-200': order.status === 'Cancelled'
+                }"
+              >
+                <option value="Pending">Pending</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Paid">Paid</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+            </td>
+
+            <!-- Actions -->
+            <td class="py-4 px-6 text-right">
+              <button
+                (click)="openWhatsApp(order)"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg text-xs font-bold transition-colors"
+                title="Open WhatsApp Chat"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                WhatsApp
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="filteredOrders.length === 0">
+            <td colspan="7" class="py-8 text-center text-slate-400">
+              No orders or inquiries found.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

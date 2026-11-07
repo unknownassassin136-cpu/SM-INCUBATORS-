@@ -1,0 +1,279 @@
+<div class="space-y-6 max-w-5xl mx-auto">
+  <!-- Header -->
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Footer & Contact Management</h1>
+      <p class="text-sm text-slate-500 mt-1">Edit brand summary, contact numbers, address, social media links, GST, and copyright notice</p>
+    </div>
+
+    <button
+      (click)="saveFooter()"
+      [disabled]="saving"
+      class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl shadow transition-colors"
+    >
+      <span *ngIf="saving" class="animate-spin rounded-full h-3.5 w-3.5 border-2 border-white border-t-transparent"></span>
+      <svg *ngIf="!saving" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+      <span>{{ saving ? 'Saving Changes...' : 'Save Footer Settings' }}</span>
+    </button>
+  </div>
+
+  <!-- Notification Toast -->
+  <div
+    *ngIf="notification"
+    class="p-4 rounded-xl text-sm font-semibold flex items-center justify-between shadow-sm transition-all"
+    [ngClass]="{
+      'bg-emerald-50 text-emerald-800 border border-emerald-200': notificationType === 'success',
+      'bg-red-50 text-red-800 border border-red-200': notificationType === 'error'
+    }"
+  >
+    <span>{{ notification }}</span>
+    <button (click)="notification = ''" class="text-slate-400 hover:text-slate-600">&times;</button>
+  </div>
+
+  <!-- Card 1: Brand & About Section -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 space-y-4">
+    <div class="border-b border-slate-100 pb-3">
+      <h2 class="text-base font-bold text-slate-900">Brand Identity & About Text</h2>
+      <p class="text-xs text-slate-500">Summary paragraph displayed in the footer's first column.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Company Name</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.companyName"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Tagline</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.tagline"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">About / Mission Text</label>
+      <textarea
+        rows="3"
+        [(ngModel)]="footerData.aboutText"
+        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+      ></textarea>
+    </div>
+  </div>
+
+  <!-- Card 2: Contact Information & Address -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 space-y-4">
+    <div class="border-b border-slate-100 pb-3">
+      <h2 class="text-base font-bold text-slate-900">Contact Details & Physical Address</h2>
+      <p class="text-xs text-slate-500">Customer care telephone numbers, WhatsApp channel, and workshop location.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Contact Phone Number</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.phone"
+          placeholder="e.g. 7981081579"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">WhatsApp Number (with country code)</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.whatsappNumber"
+          placeholder="e.g. 917981081579"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Support Email</label>
+        <input
+          type="email"
+          [(ngModel)]="footerData.email"
+          placeholder="e.g. srimavullammaincubator@gmail.com"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Working Hours</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.workingHours"
+          placeholder="e.g. Mon - Sat: 9:00 AM - 8:00 PM"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Address Line 1</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.addressLine1"
+          placeholder="e.g. Chinamiram"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Address Line 2 / Landmark</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.addressLine2"
+          placeholder="e.g. Balram Raju Nagar"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">City, State & Pincode</label>
+        <div class="flex gap-2">
+          <input
+            type="text"
+            [(ngModel)]="footerData.city"
+            placeholder="Bhimavaram"
+            class="w-1/3 px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+          />
+          <input
+            type="text"
+            [(ngModel)]="footerData.state"
+            placeholder="Andhra Pradesh"
+            class="w-1/3 px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+          />
+          <input
+            type="text"
+            [(ngModel)]="footerData.pincode"
+            placeholder="534204"
+            class="w-1/3 px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Social Media Links -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 space-y-4">
+    <div class="border-b border-slate-100 pb-3">
+      <h2 class="text-base font-bold text-slate-900">Social Media & Channel URLs</h2>
+      <p class="text-xs text-slate-500">Provide profile links to connect customers across social networks.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Facebook URL</label>
+        <input
+          type="url"
+          [(ngModel)]="footerData.socialFacebook"
+          placeholder="https://facebook.com/..."
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Instagram URL</label>
+        <input
+          type="url"
+          [(ngModel)]="footerData.socialInstagram"
+          placeholder="https://instagram.com/..."
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">YouTube Channel URL</label>
+        <input
+          type="url"
+          [(ngModel)]="footerData.socialYoutube"
+          placeholder="https://youtube.com/@..."
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">WhatsApp Channel / Group URL</label>
+        <input
+          type="url"
+          [(ngModel)]="footerData.socialWhatsappChannel"
+          placeholder="https://whatsapp.com/channel/..."
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4: Legal & Copyright -->
+  <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8 space-y-4">
+    <div class="border-b border-slate-100 pb-3">
+      <h2 class="text-base font-bold text-slate-900">Legal, GST & Trust Badges</h2>
+      <p class="text-xs text-slate-500">Official business registration numbers and copyright disclaimer.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Copyright Text</label>
+        <input
+          type="text"
+          [(ngModel)]="footerData.copyrightText"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+        />
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">GST Number</label>
+          <label class="flex items-center gap-1.5 cursor-pointer text-xs text-slate-600">
+            <input type="checkbox" [(ngModel)]="footerData.showGst" class="rounded text-blue-600" />
+            <span>Show in footer</span>
+          </label>
+        </div>
+        <input
+          type="text"
+          [(ngModel)]="footerData.gstNumber"
+          placeholder="e.g. 37ABCDE1234F1Z5"
+          class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono"
+        />
+      </div>
+    </div>
+
+    <div>
+      <div class="flex items-center justify-between mb-2">
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Trust Highlights Banner</label>
+        <label class="flex items-center gap-1.5 cursor-pointer text-xs text-slate-600">
+          <input type="checkbox" [(ngModel)]="footerData.showTrustBadges" class="rounded text-blue-600" />
+          <span>Show highlight bar</span>
+        </label>
+      </div>
+      <input
+        type="text"
+        [(ngModel)]="footerData.trustBadgesText"
+        placeholder="100% Tested Hatch Rates • Genuine Spare Parts Guarantee • Pan India Delivery"
+        class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm"
+      />
+    </div>
+  </div>
+
+  <!-- Bottom Save Action -->
+  <div class="flex justify-end pt-2">
+    <button
+      (click)="saveFooter()"
+      [disabled]="saving"
+      class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl shadow transition-colors"
+    >
+      <span *ngIf="saving" class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></span>
+      <span>{{ saving ? 'Saving Changes...' : 'Save Footer Settings' }}</span>
+    </button>
+  </div>
+</div>
+
