@@ -8,5 +8,5 @@ const isLocal =
 export const environment = {
   production: !isLocal,
   siteUrl: 'https://smincubators.in',
-  apiUrl: isLocal ? 'http://localhost:5000/api' : 'https://sm-incubators-api.onrender.com/api',
+  apiUrl: isLocal ? 'http://localhost:5000/api' : '/api',
 };

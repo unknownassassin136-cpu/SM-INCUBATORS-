@@ -1,0 +1,13 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow public read so all website visitors, customers, and WhatsApp links can display images
+    match /{allPaths=**} {
+      allow read: if true;
+      // Prevent direct unauthorized client writes (uploads are performed safely via backend Admin SDK)
+      allow write: if false;
+    }
+  }
+}
+
