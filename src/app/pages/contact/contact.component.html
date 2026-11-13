@@ -21,12 +21,7 @@
             </div>
             <div class="ml-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">Visit Us</h3>
-              <p class="text-gray-600 leading-relaxed">
-                SM Incubators<br>
-                Chinamiram,<br>
-                Balram Raju Nagar,<br>
-                Bhimavaram, Andhra Pradesh
-              </p>
+              <p class="text-gray-600 leading-relaxed whitespace-pre-line">{{ address }}</p>
             </div>
           </div>
           
@@ -37,7 +32,7 @@
             <div class="ml-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
               <p class="text-gray-600 mb-2">Sales & Support:</p>
-              <a href="tel:7981081579" class="text-xl font-semibold text-primary hover:text-blue-800">7981081579</a>
+              <a [href]="'tel:' + phone" class="text-xl font-semibold text-primary hover:text-blue-800">{{ phone }}</a>
             </div>
           </div>
 
@@ -48,14 +43,42 @@
             <div class="ml-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
               <p class="text-gray-600 mb-2">Chat with our experts instantly:</p>
-              <a href="https://wa.me/917981081579" target="_blank" class="text-xl font-semibold text-accent hover:text-green-700">7981081579</a>
+              <a [href]="'https://wa.me/' + whatsappNumber" target="_blank" class="text-xl font-semibold text-accent hover:text-green-700">{{ whatsappNumber }}</a>
             </div>
           </div>
         </div>
         
         <div class="mt-12">
-          <div class="w-full h-64 md:h-80 bg-gray-100 rounded-2xl border border-gray-200 shadow-inner overflow-hidden relative">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3824.477909185154!2d81.49747847514628!3d16.552434884199307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDMzJzA4LjgiTiA4McKwMzAnMDAuMiJF!5e0!3m2!1sen!2sin!4v1788267945069!5m2!1sen!2sin" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+              <svg class="w-5 h-5 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              Location on Google Maps
+            </h3>
+            <a
+              href="https://maps.google.com/?q=Chinamiram+Balram+Raju+Nagar+Bhimavaram"
+              target="_blank"
+              class="text-xs font-semibold text-primary hover:underline inline-flex items-center gap-1"
+            >
+              Get Directions ↗
+            </a>
+          </div>
+          <div class="w-full h-72 md:h-96 bg-gray-100 rounded-2xl border border-gray-200 shadow-inner overflow-hidden relative">
+            <iframe
+              *ngIf="safeMapUrl"
+              [src]="safeMapUrl"
+              class="w-full h-full border-0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+            <div
+              *ngIf="!safeMapUrl"
+              class="w-full h-full flex flex-col items-center justify-center text-gray-400 p-4 text-center"
+            >
+              <p class="text-sm">Map location loading or not configured...</p>
+            </div>
           </div>
         </div>
       </div>

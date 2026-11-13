@@ -25,6 +25,7 @@ export interface SiteSettings {
   upiId: string;
   upiQrImage: string;
   address: string;
+  googleMapsEmbedUrl?: string;
 }
 
 @Injectable({

@@ -25,6 +25,8 @@ const defaultSiteData: Record<string, any> = {
     upiId: '7981081579@ptyes',
     upiQrImage: '/assets/images/upi-qr.png',
     address: 'Chinamiram, Balram Raju Nagar, Bhimavaram, Andhra Pradesh - 534204',
+    googleMapsEmbedUrl:
+      'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3824.477909185154!2d81.49747847514628!3d16.552434884199307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDMzJzA4LjgiTiA4McKwMzAnMDAuMiJF!5e0!3m2!1sen!2sin!4v1788267945069!5m2!1sen!2sin',
   },
 };
 
