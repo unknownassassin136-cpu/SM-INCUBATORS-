@@ -10,12 +10,7 @@ import {
   bulkUploadProducts,
 } from '../controllers/products.controller.js';
 import { authenticateAdmin } from '../middleware/auth.js';
-import multer from 'multer';
-
-const memoryUpload = multer({
-  storage: multer.memoryStorage(),
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit for CSV
-});
+import { upload } from '../middleware/upload.js';
 
 const router = Router();
 
@@ -27,7 +22,7 @@ router.get('/template/csv', downloadProductsTemplateCSV);
 router.post(
   '/bulk/upload',
   authenticateAdmin,
-  memoryUpload.single('file'),
+  upload.single('file'),
   bulkUploadProducts
 );
 

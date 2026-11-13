@@ -36,11 +36,17 @@ export const createSpare = async (req: Request, res: Response) => {
       return res.status(400).json({ success: false, message: 'Name and slug are required' });
     }
 
-    const id = body.id || `SPR-${Date.now()}`;
-    const newSpare = {
-      ...body,
+    const id = body.id || `spr-${Date.now()}`;
+    const { id: _id, createdAt: _created, updatedAt: _updated, ...rest } = body;
+
+    const newSpare: any = {
+      ...rest,
       id,
+      name: String(body.name),
+      slug: String(body.slug),
       price: Number(body.price) || 0,
+      compatibleModels: Array.isArray(body.compatibleModels) ? body.compatibleModels : [],
+      images: Array.isArray(body.images) ? body.images : [],
       updatedAt: new Date(),
     };
 
@@ -57,13 +63,29 @@ export const updateSpare = async (req: Request, res: Response) => {
     const id = String(req.params.id);
     const body = req.body;
 
+    // Strip id, createdAt, and updatedAt to prevent Drizzle timestamp string type errors
+    const { id: _id, createdAt: _created, updatedAt: _updated, ...cleanData } = body;
+
+    const updateData: any = {
+      ...cleanData,
+      updatedAt: new Date(),
+    };
+
+    if (body.name !== undefined) updateData.name = String(body.name);
+    if (body.slug !== undefined) updateData.slug = String(body.slug);
+    if (body.description !== undefined) updateData.description = body.description;
+    if (body.price !== undefined) updateData.price = Number(body.price) || 0;
+    if (body.compatibleModels !== undefined) {
+      updateData.compatibleModels = Array.isArray(body.compatibleModels) ? body.compatibleModels : [];
+    }
+    if (body.images !== undefined) {
+      updateData.images = Array.isArray(body.images) ? body.images : [];
+    }
+    if (body.whatsappMessage !== undefined) updateData.whatsappMessage = body.whatsappMessage;
+
     const updated = await db
       .update(spares)
-      .set({
-        ...body,
-        price: body.price !== undefined ? Number(body.price) : undefined,
-        updatedAt: new Date(),
-      })
+      .set(updateData)
       .where(eq(spares.id, id))
       .returning();
 

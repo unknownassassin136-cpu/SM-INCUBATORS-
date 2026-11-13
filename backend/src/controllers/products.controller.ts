@@ -65,15 +65,39 @@ export const updateProduct = async (req: Request, res: Response) => {
     const id = String(req.params.id);
     const body = req.body;
 
+    // Strip id, createdAt, and updatedAt to prevent Drizzle timestamp string type errors
+    const { id: _id, createdAt: _created, updatedAt: _updated, ...cleanData } = body;
+
+    const updateData: any = {
+      ...cleanData,
+      price: body.price !== undefined ? Number(body.price) : undefined,
+      originalPrice: body.originalPrice !== undefined ? (body.originalPrice ? Number(body.originalPrice) : null) : undefined,
+      capacity: body.capacity !== undefined ? Number(body.capacity) : undefined,
+      updatedAt: new Date(),
+    };
+
+    if (body.images !== undefined) {
+      updateData.images = Array.isArray(body.images) ? body.images : [];
+    }
+    if (body.features !== undefined) {
+      updateData.features = Array.isArray(body.features) ? body.features : [];
+    }
+    if (body.specifications !== undefined) {
+      updateData.specifications = body.specifications || {};
+    }
+    if (body.applications !== undefined) {
+      updateData.applications = Array.isArray(body.applications) ? body.applications : [];
+    }
+    if (body.birds !== undefined) {
+      updateData.birds = Array.isArray(body.birds) ? body.birds : [];
+    }
+    if (body.relatedProducts !== undefined) {
+      updateData.relatedProducts = Array.isArray(body.relatedProducts) ? body.relatedProducts : [];
+    }
+
     const updated = await db
       .update(products)
-      .set({
-        ...body,
-        price: body.price !== undefined ? Number(body.price) : undefined,
-        originalPrice: body.originalPrice !== undefined ? Number(body.originalPrice) : undefined,
-        capacity: body.capacity !== undefined ? Number(body.capacity) : undefined,
-        updatedAt: new Date(),
-      })
+      .set(updateData)
       .where(eq(products.id, id))
       .returning();
 

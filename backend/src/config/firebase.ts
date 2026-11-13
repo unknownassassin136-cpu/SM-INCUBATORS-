@@ -24,13 +24,25 @@ try {
           clientEmail,
           privateKey,
         }),
-        storageBucket: storageBucket || `${projectId}.appspot.com`,
+        storageBucket: storageBucket || `${projectId}.firebasestorage.app`,
       });
       console.log('✅ Firebase Admin initialized with Storage Bucket:', storageBucket);
     }
     bucket = admin.storage().bucket();
   } else {
-    console.warn('⚠️ Firebase credentials not set or using placeholders. Image uploads will use local placeholder storage.');
+    // In Google Cloud Functions/Cloud Run or when service account key isn't provided,
+    // initialize using Google Cloud Application Default Credentials (ADC)
+    try {
+      if (!admin.apps.length) {
+        admin.initializeApp({
+          storageBucket: storageBucket || `${projectId || 'sm-incubators'}.firebasestorage.app`,
+        });
+      }
+      bucket = admin.storage().bucket();
+      console.log('✅ Firebase Admin initialized with Application Default Credentials');
+    } catch (adcErr) {
+      console.warn('⚠️ Firebase Admin ADC fallback not available:', adcErr);
+    }
   }
 } catch (error) {
   console.error('⚠️ Firebase Admin initialization error:', error);

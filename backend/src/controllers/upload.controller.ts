@@ -5,13 +5,13 @@ export const uploadImage = async (req: Request, res: Response) => {
   try {
     const file = req.file;
 
-    if (!file) {
-      return res.status(400).json({ success: false, message: 'No file uploaded' });
+    if (!file || !file.buffer) {
+      return res.status(400).json({ success: false, message: 'No file uploaded or file buffer empty' });
     }
 
     const folder = req.body.folder || 'products';
     const timestamp = Date.now();
-    const sanitizedFilename = file.originalname.replace(/[^a-zA-Z0-9.-]/g, '_');
+    const sanitizedFilename = (file.originalname || 'image.jpg').replace(/[^a-zA-Z0-9.-]/g, '_');
     const destination = `${folder}/${timestamp}-${sanitizedFilename}`;
 
     // If Firebase bucket is initialized, upload to Firebase Storage
@@ -23,18 +23,28 @@ export const uploadImage = async (req: Request, res: Response) => {
         },
       });
 
-      return new Promise<void>((resolve, reject) => {
+      return new Promise<void>((resolve) => {
         stream.on('error', (error: any) => {
           console.error('Firebase Storage upload error:', error);
-          res.status(500).json({ success: false, message: 'Failed to upload image to Firebase Storage', error: error.message });
-          reject(error);
+          res.status(500).json({
+            success: false,
+            message: 'Failed to upload image to Firebase Storage',
+            error: error.message,
+          });
+          resolve();
         });
 
         stream.on('finish', async () => {
           try {
-            // Make file publicly readable
-            await fileUpload.makePublic();
-            const publicUrl = `https://storage.googleapis.com/${bucket.name}/${destination}`;
+            // Generate standard Firebase Storage token for public browser access
+            const token = Date.now().toString(36) + Math.random().toString(36).substring(2);
+            await fileUpload.setMetadata({
+              contentType: file.mimetype,
+              metadata: {
+                firebaseStorageDownloadTokens: token,
+              },
+            });
+            const publicUrl = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(destination)}?alt=media&token=${token}`;
             res.json({
               success: true,
               message: 'Image uploaded successfully to Firebase Storage',
@@ -43,7 +53,7 @@ export const uploadImage = async (req: Request, res: Response) => {
             });
             resolve();
           } catch (pubErr: any) {
-            // Alternatively generate v4 signed URL or standard firebasestorage download URL
+            console.warn('Metadata token error, using standard download URL:', pubErr.message);
             const fallbackUrl = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(destination)}?alt=media`;
             res.json({
               success: true,
@@ -59,7 +69,7 @@ export const uploadImage = async (req: Request, res: Response) => {
       });
     }
 
-    // Fallback if Firebase credentials are not yet set in .env
+    // Fallback if Firebase bucket is not available
     const base64Data = `data:${file.mimetype};base64,${file.buffer.toString('base64')}`;
     return res.json({
       success: true,
@@ -71,4 +81,3 @@ export const uploadImage = async (req: Request, res: Response) => {
     return res.status(500).json({ success: false, message: 'File upload failed', error: error.message });
   }
 };
-
